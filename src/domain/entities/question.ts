@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 
 interface QuestionProps {
   authorId: UniqueEntityID
-  bastAnswerId?: UniqueEntityID
+  bestAnswerId?: UniqueEntityID
   title: string
   content: string
   slug: Slug
@@ -19,8 +19,8 @@ export class Question extends Entity<QuestionProps>{
     return this.props.authorId
   }
   
-  get bastAnswerId(){
-    return this.props.bastAnswerId
+  get bestAnswerId(){
+    return this.props.bestAnswerId
   }
 
   get title(){
@@ -67,8 +67,8 @@ export class Question extends Entity<QuestionProps>{
     this.touch()
   }
 
-  set bastAnswerId(bastAnswerId: UniqueEntityID | undefined){
-    this.props.bastAnswerId = bastAnswerId
+  set bestAnswerId(bestAnswerId: UniqueEntityID | undefined){
+    this.props.bestAnswerId = bestAnswerId
     this.touch()
   }
 
