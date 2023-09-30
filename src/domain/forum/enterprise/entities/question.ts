@@ -8,10 +8,10 @@ import { QuestionAttachmentList } from './question-attachment-list'
 export interface QuestionProps {
   authorId: UniqueEntityID
   bestAnswerId?: UniqueEntityID
-  attachments: QuestionAttachmentList
   title: string
   content: string
   slug: Slug
+  attachments: QuestionAttachmentList
   createdAt: Date
   updatedAt?: Date
 }
@@ -75,6 +75,7 @@ export class Question extends AggregateRoot<QuestionProps> {
 
   set attachments(attachments: QuestionAttachmentList) {
     this.props.attachments = attachments
+    this.touch()
   }
 
   set bestAnswerId(bestAnswerId: UniqueEntityID | undefined) {
