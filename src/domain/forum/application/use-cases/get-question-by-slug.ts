@@ -8,7 +8,7 @@ interface GetQuestionBySlugUseCaseRequest {
 }
 
 type GetQuestionBySlugUseCaseResponse = Either<
-  null,
+  ResourceNotFoundError,
   {
     question: Question
   }
